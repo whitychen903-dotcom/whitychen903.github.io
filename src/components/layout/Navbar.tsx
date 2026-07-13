@@ -5,14 +5,12 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
-import { useSession, signOut } from "next-auth/react";
 import { useI18n } from "@/components/layout/I18nProvider";
 
 export default function Navbar() {
   const { locale, t } = useI18n();
   const router = useRouter();
   const pathname = usePathname();
-  const { data: session } = useSession();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
 
@@ -88,24 +86,6 @@ export default function Navbar() {
                 </div>
               )}
             </div>
-
-            {/* Auth */}
-            {session ? (
-              <button
-                onClick={() => signOut()}
-                className="text-[13px] text-neutral-500 hover:text-neutral-900 transition-colors"
-              >
-                {t("nav.logout")}
-              </button>
-            ) : (
-              <Link
-                href={`/${locale}/auth/signin`}
-                className="text-[13px] font-medium px-4 py-1.5 rounded-full text-white transition-colors"
-                style={{ backgroundColor: "#6F8436" }}
-              >
-                {t("nav.login")}
-              </Link>
-            )}
           </div>
 
           {/* Mobile Menu Button */}

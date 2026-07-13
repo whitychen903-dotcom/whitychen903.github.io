@@ -12,6 +12,10 @@ export default {
     heroTitle: "J-Pop Hub",
     heroSubtitle: "从这里，听见日本音乐",
     viewBands: "探索音乐人",
+    viewMyEvents: "我的想看",
+    trendingEvents: "大事件",
+    ticketDeadline: "即将截止购票",
+    daysLeft: "{n}天后截止",
     recentNews: "最新动态",
   },
   bands: {

@@ -300,7 +300,7 @@ export default function BandDetailPage() {
               {t("bands.tourInfo")}
             </h3>
           </div>
-          <TourSection tours={band.tours} artistName={band.name[localeKey]} />
+          <TourSection tours={band.tours} artistName={band.name[localeKey]} artistSlug={band.slug} />
         </section>
 
         {/* Social Feeds */}

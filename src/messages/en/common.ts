@@ -12,6 +12,10 @@ export default {
     heroTitle: "J-Pop Hub",
     heroSubtitle: "Discover the sound of Japan",
     viewBands: "Explore Artists",
+    viewMyEvents: "My List",
+    trendingEvents: "Trending",
+    ticketDeadline: "Ticket Sales Ending Soon",
+    daysLeft: "{n} days left",
     recentNews: "Latest News",
   },
   bands: {

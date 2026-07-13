@@ -91,6 +91,7 @@ export interface Band {
   name: { zh: string; ja: string; en: string };
   slug: string;
   genre: string;
+  tags?: string[]; // Genre tags for filtering: "j-rock", "j-pop", "idol-group", "band", "singer-songwriter", "r-b", "hip-hop", "electronic", "folk-indie", "jazz", "anisong", "metal", "rap"
   description: { zh: string; ja: string; en: string };
   members: BandMember[];
   twitterHandle: string;
@@ -221,6 +222,9 @@ const IMAGES = {
   arMatsumoto: withBasePath("/images/arashi-matsumoto.jpg"),
   // サカナクション 成员
   sakanactionIchiro: withBasePath("/images/sakanaction-ichiro.png"),
+
+  // 🆕 v3.0 占位图（新音乐人后续补充真实图片）
+  placeholder: withBasePath("/images/artist-placeholder.svg"),
 };
 
 // ==================== 乐队数据 ====================
@@ -236,6 +240,7 @@ export const bands: Band[] = [
     },
     slug: "higedan",
     genre: "J-Pop / Piano Rock",
+    tags: ["j-rock", "band"],
     description: {
       zh: "2012年于岛根县结成，四位同乡好友组成的日本钢琴摇滚乐队。乐队名意为「即使到了适合留胡子的年纪，也要继续创作让人心动的音乐」。以主唱藤原聪的独特嗓音和钢琴技巧为核心，融合摇滚、R&B等多种风格。《Pretender》《I LOVE...》《Subtitle》等大热单曲风靡亚洲。",
       ja: "2012年、島根県で結成されたピアノロックバンド。バンド名には「髭の似合う歳になっても、誰もがワクワクするような音楽を作り続けたい」という想いが込められている。藤原聡の個性的なボーカルとピアノを軸に、ロックやR&Bを融合させた独自のサウンドが魅力。「Pretender」「I LOVE...」「Subtitle」など数々の大ヒット曲を生み出している。",
@@ -582,6 +587,7 @@ export const bands: Band[] = [
     },
     slug: "mrs-green-apple",
     genre: "J-Pop / Rock",
+    tags: ["j-rock", "band"],
     description: {
       zh: "2013年成立的三人摇滚乐队，由主唱大森元贵、吉他手若井滉斗、键盘手藤泽凉架组成。乐队以「Mrs.」代表女性视角的细腻，「GREEN APPLE」象征未成熟的青春，创造出跨越世代的音乐。代表作《青と夏》《点描の唄》《ダンスホール》《ライラック》等风靡全日本，连续三年获得日本唱片大赏。",
       ja: "2013年結成の3人組ロックバンド。大森元貴（Vo/Gt）、若井滉斗（Gt）、藤澤涼架（Key）で構成。「Mrs.」は女性目線の繊細さ、「GREEN APPLE」は未熟な青春を象徴し、世代を超えて響く音楽を創造。『青と夏』『点描の唄』『ダンスホール』『ライラック』など数々のヒット曲を生み出し、日本レコード大賞を3年連続受賞。",
@@ -928,6 +934,7 @@ export const bands: Band[] = [
     name: { zh: "back number", ja: "back number", en: "back number" },
     slug: "back-number",
     genre: "J-Pop / Rock Ballad",
+    tags: ['j-rock', 'band'],
     description: {
       zh: "2004年于群马县结成，以主唱清水依与吏为核心的三人大热乐队。以深情而细腻的情歌著称，代表作《クリスマスソング》《高嶺の花子さん》《水平線》等感动无数听众。2025年Billboard Japan Artist 100排名第2。",
       ja: "2004年群馬県で結成、ボーカル清水依与吏を中心とした3ピースの超人気バンド。深く繊細なラブソングで知られ、『クリスマスソング』『高嶺の花子さん』『水平線』など数々の名曲を生み出している。2025年Billboard Japan Artist 100で2位。",
@@ -977,6 +984,7 @@ export const bands: Band[] = [
     name: { zh: "米津玄師", ja: "米津玄師", en: "Kenshi Yonezu" },
     slug: "kenshi-yonezu",
     genre: "J-Pop / Alternative",
+    tags: ['j-pop', 'singer-songwriter'],
     description: {
       zh: "日本最具代表性的创作歌手，从Vocaloid制作人ハチ转型为solo艺人。以独特的音乐世界观和极富感染力的嗓音征服了全亚洲。代表作《Lemon》《KICK BACK》《Plazma》等。2025年Billboard Japan Artist 100排名第3。",
       ja: "日本を代表するシンガーソングライター。ボカロP・ハチとして活動後、ソロアーティストに転身。独自の音楽世界と圧倒的な歌声でアジア中を魅了。代表作『Lemon』『KICK BACK』『Plazma』など。2025年Artist 100で3位。",
@@ -1021,6 +1029,7 @@ export const bands: Band[] = [
     name: { zh: "Vaundy", ja: "Vaundy", en: "Vaundy" },
     slug: "vaundy",
     genre: "J-Pop / Rock / City Pop",
+    tags: ['j-pop', 'singer-songwriter'],
     description: {
       zh: "日本新生代最具才华的创作歌手，2019年以《東京フラッシュ》出道。多才多艺，包揽作词、作曲、编曲，音乐风格横跨摇滚、流行、City Pop。代表作《怪獣の花唄》《不可幸力》《踊り子》等。2025年Artist 100排名第4。",
       ja: "日本新世代を代表するマルチクリエイター。2019年『東京フラッシュ』でデビュー。作詞・作曲・編曲を手がけ、ロックからポップス、シティポップまで幅広い。代表作『怪獣の花唄』『不可幸力』『踊り子』など。2025年Artist 100で4位。",
@@ -1065,6 +1074,7 @@ export const bands: Band[] = [
     name: { zh: "YOASOBI", ja: "YOASOBI", en: "YOASOBI" },
     slug: "yoasobi",
     genre: "J-Pop / Electronic",
+    tags: ['j-pop', 'anisong'],
     description: {
       zh: "将小说化为音乐的二人组合，由作曲家Ayase与主唱ikura组成。2019年以《夜に駆ける》出道即爆红，开创了「小说音乐化」的全新流派。代表作《アイドル》《夜に駆ける》《群青》等，风靡全球。2025年Artist 100排名第9。",
       ja: "小説を音楽にする2人組ユニット。コンポーザーAyaseとボーカルikuraで構成。2019年『夜に駆ける』でデビューし爆発的ヒット。「小説を音楽にする」という新ジャンルを確立。代表作『アイドル』『夜に駆ける』『群青』など。2025年Artist 100で9位。",
@@ -1109,6 +1119,7 @@ export const bands: Band[] = [
     name: { zh: "藤井風", ja: "藤井 風", en: "Fujii Kaze" },
     slug: "fujii-kaze",
     genre: "J-Pop / R&B / Jazz",
+    tags: ['j-pop', 'singer-songwriter', 'r-b'],
     description: {
       zh: "日本最受国际瞩目的天才创作歌手。以钢琴弹唱为核心，融合R&B、Jazz、Funk等多元风格。代表作《きらり》《死ぬのがいいわ》《満ちてゆく》等在全球范围广受欢迎。2025年Artist 100排名第8。",
       ja: "日本で最も国際的に注目される天才シンガーソングライター。ピアノ弾き語りを軸に、R&B、ジャズ、ファンクを融合。代表作『きらり』『死ぬのがいいわ』『満ちてゆく』などが世界的に人気。2025年Artist 100で8位。",
@@ -1152,6 +1163,7 @@ export const bands: Band[] = [
     name: { zh: "Ado", ja: "Ado", en: "Ado" },
     slug: "ado",
     genre: "J-Pop / Rock / Vocaloid-influenced",
+    tags: ['j-pop', 'anisong'],
     description: {
       zh: "日本现象级女歌手，2020年以《うっせぇわ》出道即引发社会现象。以极具爆发力的嗓音和神秘不露脸的形象著称。代表作《唱》《新時代》《うっせぇわ》等。",
       ja: "日本を代表する現象的歌姫。2020年『うっせぇわ』でデビューし社会現象に。圧倒的な歌唱力と素顔を見せないミステリアスな存在感で知られる。代表作『唱』『新時代』『うっせぇわ』など。",
@@ -1195,6 +1207,7 @@ export const bands: Band[] = [
     name: { zh: "あいみょん", ja: "あいみょん", en: "Aimyon" },
     slug: "aimyon",
     genre: "J-Pop / Singer-Songwriter",
+    tags: ['j-pop', 'singer-songwriter'],
     description: {
       zh: "日本最具人气的女性创作歌手。以率真的歌词和抓耳的旋律俘获了大批粉丝。代表作《マリーゴールド》《裸の心》《君はロックを聴かない》等，被誉为「国民女友」。",
       ja: "日本で最も人気の女性シンガーソングライター。率直な歌詞と耳に残るメロディで多くのファンを魅了。代表作『マリーゴールド』『裸の心』『君はロックを聴かない』など。「国民的女友」と呼ばれる。",
@@ -1238,6 +1251,7 @@ export const bands: Band[] = [
     name: { zh: "King Gnu", ja: "King Gnu", en: "King Gnu" },
     slug: "king-gnu",
     genre: "J-Rock / Alternative / Experimental",
+    tags: ['j-rock', 'band'],
     description: {
       zh: "日本最具创新力的四人摇滚乐队，以常田大希为核心。融合摇滚、爵士、古典、电子等多元风格，开创了独一无二的音乐世界。代表作《白日》《一途》《SPECIALZ》等。",
       ja: "日本で最も革新的な4人組ロックバンド。常田大希を中心に、ロック、ジャズ、クラシック、エレクトロニカを融合させた独自の音楽世界を確立。代表作『白日』『一途』『SPECIALZ』など。",
@@ -1285,6 +1299,7 @@ export const bands: Band[] = [
     name: { zh: "サカナクション", ja: "サカナクション", en: "Sakanaction" },
     slug: "sakanaction",
     genre: "J-Rock / Electronic / Alternative",
+    tags: ['j-rock', 'electronic', 'band'],
     description: {
       zh: "以山口一郎为核心的日本顶级电子摇滚乐队。融合摇滚、电子、舞曲等多种元素，以精密的音效设计和极具艺术感的现场演出著称。代表作《新宝島》《怪獣》《アイデンティティ》等。",
       ja: "山口一郎を中心とした日本を代表するエレクトロロックバンド。ロック、エレクトロニカ、ダンスミュージックを融合し、精密なサウンドデザインと芸術性の高いライブが特徴。代表作『新宝島』『怪獣』『アイデンティティ』など。",
@@ -1322,6 +1337,7 @@ export const bands: Band[] = [
     name: { zh: "Creepy Nuts", ja: "Creepy Nuts", en: "Creepy Nuts" },
     slug: "creepy-nuts",
     genre: "Hip-Hop / J-Pop",
+    tags: ['hip-hop', 'j-pop'],
     description: {
       zh: "由DJ松永和R-指定组成的日本最受欢迎的嘻哈二人组。2024年以《Bling-Bang-Bang-Born》全球爆红。独特的饶舌风格和DJ松永的精湛技巧创造出独一无二的音乐。",
       ja: "DJ松永とR-指定による日本で最も人気のヒップホップユニット。2024年『Bling-Bang-Bang-Born』で世界的ブレイク。独特のラップスタイルとDJ松永の卓越したテクニックが唯一無二の音楽を生み出す。",
@@ -1367,6 +1383,7 @@ export const bands: Band[] = [
     name: { zh: "ONE OK ROCK", ja: "ONE OK ROCK", en: "ONE OK ROCK" },
     slug: "one-ok-rock",
     genre: "Alternative Rock / Post-Hardcore",
+    tags: ['j-rock', 'band'],
     description: {
       zh: "日本最具国际影响力的摇滚乐队，以Taka为核心。在全球范围内拥有庞大粉丝群，与众多国际音乐人合作。代表作《The Beginning》《Wherever you are》《Renegades》等。",
       ja: "日本で最も国際的な影響力を持つロックバンド。Takaを中心に、世界中に巨大なファン層を持つ。代表作『The Beginning』『Wherever you are』『Renegades』など。",
@@ -1416,6 +1433,7 @@ export const bands: Band[] = [
     name: { zh: "RADWIMPS", ja: "RADWIMPS", en: "RADWIMPS" },
     slug: "radwimps",
     genre: "Alternative Rock / Emo",
+    tags: ['j-rock', 'band'],
     description: {
       zh: "以野田洋次郎为核心的日本顶级摇滚乐队。以深刻的歌词和独特的旋律感闻名，负责了新海诚《君の名は。》《天気の子》《すずめの戸締まり》三部电影的音乐。代表作《前前前世》《なんでもないや》《グランドエスケープ》等。",
       ja: "野田洋次郎を中心とした日本トップクラスのロックバンド。深い歌詞と独特のメロディセンスで知られ、新海誠監督『君の名は。』『天気の子』『すずめの戸締まり』3作品の音楽を担当。",
@@ -1462,6 +1480,7 @@ export const bands: Band[] = [
     name: { zh: "B'z", ja: "B'z", en: "B'z" },
     slug: "bz",
     genre: "Hard Rock / Blues Rock",
+    tags: ['j-rock', 'band'],
     description: {
       zh: "日本摇滚传奇，由稻叶浩志和松本孝弘组成。日本历史上最畅销的音乐艺人，总销量超过8000万张。代表作《ultra soul》《LOVE PHANTOM》《イチブトゼンブ》等，跨越30年依然活跃在第一线。",
       ja: "日本ロックのレジェンド。稲葉浩志と松本孝弘によるユニット。日本音楽史上最も売れたアーティストで、総売上8000万枚超。代表作『ultra soul』『LOVE PHANTOM』『イチブトゼンブ』など。",
@@ -1506,6 +1525,7 @@ export const bands: Band[] = [
     name: { zh: "星野源", ja: "星野源", en: "Gen Hoshino" },
     slug: "gen-hoshino",
     genre: "J-Pop / Folk / Funk",
+    tags: ['j-pop', 'singer-songwriter'],
     description: {
       zh: "日本全能型艺人，演员、作家、音乐人三栖发展。以温暖而独特的歌声和诙谐幽默的人格魅力深受喜爱。代表作《恋》《アイデア》《SUN》等，《恋》因日剧《逃げるは恥だが役に立つ》成为社会现象级歌曲。",
       ja: "日本のマルチタレント。俳優、作家、音楽家として活躍。温かく個性的な歌声とユーモアあふれる人柄で幅広く愛される。代表作『恋』『アイデア』『SUN』など。『恋』はドラマ『逃げ恥』で社会現象に。",
@@ -1548,6 +1568,7 @@ export const bands: Band[] = [
     name: { zh: "宇多田ヒカル", ja: "宇多田ヒカル", en: "Hikaru Utada" },
     slug: "hikaru-utada",
     genre: "J-Pop / R&B / Electronic",
+    tags: ['j-pop', 'singer-songwriter', 'r-b'],
     description: {
       zh: "日本音乐史上最成功的solo艺人之一，首张专辑《First Love》以超过765万张的销量保持着日本史上最高销量专辑纪录。代表作《First Love》《Automatic》《One Last Kiss》等，跨越四分之一世纪仍活跃在音乐前沿。",
       ja: "日本音楽史上最も成功したソロアーティストの一人。デビューアルバム『First Love』は765万枚超の日本最高売上記録を保持。代表作『First Love』『Automatic』『One Last Kiss』など。",
@@ -1590,6 +1611,7 @@ export const bands: Band[] = [
     name: { zh: "嵐", ja: "嵐", en: "Arashi" },
     slug: "arashi",
     genre: "J-Pop / Idol",
+    tags: ['idol-group', 'j-pop'],
     description: {
       zh: "日本国民偶像团体，1999年出道。由大野智、樱井翔、相叶雅纪、二宫和也、松本润五人组成。横跨音乐、影视、综艺的全能偶像，总唱片销量超过4000万张。2020年底起无限期停止团体活动，但影响力依然巨大。",
       ja: "日本を代表する国民的アイドルグループ。1999年デビュー。大野智、櫻井翔、相葉雅紀、二宮和也、松本潤の5人組。音楽、ドラマ、バラエティと多方面で活躍。2020年末よりグループ活動を無期限休止中。",
@@ -1635,6 +1657,7 @@ export const bands: Band[] = [
     name: { zh: "Snow Man", ja: "Snow Man", en: "Snow Man" },
     slug: "snow-man",
     genre: "J-Pop / Idol / Dance",
+    tags: ['idol-group', 'j-pop'],
     description: {
       zh: "日本当下最炙手可热的9人偶像团体，2020年出道。以精湛的舞蹈实力和出色的音乐作品迅速崛起，专辑《THE BEST 2020-2025》获得2025年Billboard Japan专辑年榜第1名。",
       ja: "日本で最も勢いのある9人組アイドルグループ。2020年デビュー。圧倒的なダンススキルと質の高い楽曲で急成長。アルバム『THE BEST 2020-2025』が2025年Billboard Japan年間アルバム1位獲得。",
@@ -1689,6 +1712,7 @@ export const bands: Band[] = [
     name: { zh: "Superfly", ja: "Superfly", en: "Superfly" },
     slug: "superfly",
     genre: "J-Rock / Blues Rock",
+    tags: ['j-rock', 'singer-songwriter'],
     description: {
       zh: "以越智志帆为核心的力量型女声摇滚。以极具穿透力和灵魂感的嗓音著称，代表作《愛をこめて花束を》《タマシイレボリューション》《Beautiful》等，被誉为日本最强女性摇滚之声。",
       ja: "越智志帆を中心としたパワフルな女性ロック。圧倒的な歌唱力とソウルフルな歌声で知られ、代表作『愛をこめて花束を』『タマシイレボリューション』『Beautiful』など。日本最強の女性ロックボイスと称される。",
@@ -1731,6 +1755,7 @@ export const bands: Band[] = [
     name: { zh: "BUMP OF CHICKEN", ja: "BUMP OF CHICKEN", en: "BUMP OF CHICKEN" },
     slug: "bump-of-chicken",
     genre: "Alternative Rock",
+    tags: ['j-rock', 'band'],
     description: {
       zh: "日本摇滚乐队的中坚力量，1994年结成。以藤原基央创作的故事性歌词和温暖而有力的旋律著称。代表作《天体観測》《ray》《アカシア》等，被众多后辈音乐人敬仰。",
       ja: "日本ロックシーンの中核を担うバンド。1994年結成。藤原基央が紡ぐストーリー性のある歌詞と温かく力強いメロディが特徴。代表作『天体観測』『ray』『アカシア』など。多くの後輩アーティストから敬愛される。",
@@ -1773,6 +1798,7 @@ export const bands: Band[] = [
     name: { zh: "sumika", ja: "sumika", en: "sumika" },
     slug: "sumika",
     genre: "J-Pop / Pop Rock",
+    tags: ['j-rock', 'band'],
     description: {
       zh: "2013年结成的四人流行摇滚乐队。以温暖而富有感染力的旋律和主唱片冈健太独特的嗓音著称。代表作《フィクション》《Lovers》《春夏秋冬》等，深受年轻一代喜爱。",
       ja: "2013年結成の4人組ポップロックバンド。温かく心に響くメロディとボーカル片岡健太の独特な歌声が特徴。代表作『フィクション』『Lovers』『春夏秋冬』など、若い世代に大人気。",
@@ -1814,6 +1840,7 @@ export const bands: Band[] = [
     name: { zh: "SEKAI NO OWARI", ja: "SEKAI NO OWARI", en: "SEKAI NO OWARI" },
     slug: "sekai-no-owari",
     genre: "J-Pop / Fantasy Pop",
+    tags: ['j-pop', 'band'],
     description: {
       zh: "以梦幻般的世界观和独特的音乐风格著称的四人乐队。以童话般的舞台设计和深富哲理的歌词闻名。代表作《RPG》《Dragon Night》《Habit》等，创造了独一无二的音乐王国。",
       ja: "幻想的な世界観と独自の音楽スタイルで知られる4人組バンド。おとぎ話のようなステージデザインと哲学的な歌詞が特徴。代表作『RPG』『Dragon Night』『Habit』など。独自の音楽王国を築いた。",
@@ -1860,6 +1887,7 @@ export const bands: Band[] = [
     name: { zh: "Aimer", ja: "Aimer", en: "Aimer" },
     slug: "aimer",
     genre: "J-Pop / Ballad / Anime Song",
+    tags: ['j-pop', 'anisong'],
     description: {
       zh: "以独特沙哑而深情的嗓音闻名的日本女歌手。15岁时因事故失声，康复后获得了标志性的沙哑声线。代表作《カタオモイ》《残響散歌》《蝶々結び》等，多首歌曲作为动漫主题曲广受欢迎。",
       ja: "独特のハスキーで深みのある歌声で知られる女性シンガー。15歳の時の事故で声を失い、回復後に現在のシグネチャーボイスを獲得。代表作『カタオモイ』『残響散歌』『蝶々結び』など。",
@@ -1902,6 +1930,7 @@ export const bands: Band[] = [
     name: { zh: "LiSA", ja: "LiSA", en: "LiSA" },
     slug: "lisa",
     genre: "J-Rock / Anison",
+    tags: ['j-rock', 'anisong'],
     description: {
       zh: "日本动漫歌曲女王，以极具爆发力的嗓音和充满能量的现场表演著称。代表作《紅蓮華》《炎》《oath sign》等，《紅蓮華》作为《鬼滅の刃》主题曲风靡全球。",
       ja: "日本のアニソンクイーン。圧倒的な歌唱力とエネルギッシュなライブパフォーマンスで知られる。代表作『紅蓮華』『炎』『oath sign』など。『紅蓮華』は『鬼滅の刃』主題歌として世界的に大ヒット。",
@@ -1944,6 +1973,7 @@ export const bands: Band[] = [
     name: { zh: "スピッツ", ja: "スピッツ", en: "Spitz" },
     slug: "spitz",
     genre: "J-Rock / Folk Rock",
+    tags: ['j-rock', 'band'],
     description: {
       zh: "1987年结成的日本摇滚传奇乐队。以草野正宗创作的优美旋律和诗意歌词著称，代表作《ロビンソン》《チェリー》《空も飛べるはず》等，跨越世代被广泛喜爱。",
       ja: "1987年結成の日本ロックのレジェンドバンド。草野マサムネが紡ぐ美しいメロディと詩的な歌詞が特徴。代表作『ロビンソン』『チェリー』『空も飛べるはず』など、世代を超えて愛される。",
@@ -1986,6 +2016,7 @@ export const bands: Band[] = [
     name: { zh: "MISIA", ja: "MISIA", en: "MISIA" },
     slug: "misia",
     genre: "J-Pop / R&B / Soul",
+    tags: ['j-pop', 'r-b', 'singer-songwriter'],
     description: {
       zh: "日本最具代表性的灵魂乐/R&B女歌手。以五个八度的惊人音域和极具感染力的演唱著称。代表作《Everything》《アイノカタチ》《逢いたくていま》等，被誉为日本歌唱力最高的女歌手之一。",
       ja: "日本を代表するソウル/R&Bシンガー。5オクターブの驚異的な音域と圧倒的な歌唱力で知られる。代表作『Everything』『アイノカタチ』『逢いたくていま』など。日本最高の歌唱力を持つ女性歌手の一人。",
@@ -2028,6 +2059,7 @@ export const bands: Band[] = [
     name: { zh: "椎名林檎", ja: "椎名林檎", en: "Sheena Ringo" },
     slug: "sheena-ringo",
     genre: "J-Rock / Jazz / Experimental",
+    tags: ['j-rock', 'singer-songwriter', 'jazz'],
     description: {
       zh: "日本最具个性的女性音乐人，以独特的音乐世界观和实验性的创作著称。从摇滚到爵士、电子、古典，不断突破音乐边界。代表作《本能》《丸の内サディスティック》《長く短い祭》等，影响了一代日本音乐人。",
       ja: "日本で最も個性的な女性音楽家。独自の音楽世界と実験的な創作で知られる。ロックからジャズ、エレクトロニカ、クラシックまで、常に音楽の境界を超え続ける。代表作『本能』『丸の内サディスティック』『長く短い祭』など。",
@@ -2070,6 +2102,7 @@ export const bands: Band[] = [
     name: { zh: "ゆず", ja: "ゆず", en: "Yuzu" },
     slug: "yuzu",
     genre: "Folk Rock / J-Pop",
+    tags: ['j-pop', 'folk-indie'],
     description: {
       zh: "由北川悠仁和岩泽厚治组成的日本国民级二人组合。1997年出道，以温暖的旋律和真挚的歌词感动了无数听众。代表作《栄光の架橋》《虹》《夏色》等，被广泛用于体育赛事和应援场景。",
       ja: "北川悠仁と岩沢厚治による国民的デュオ。1997年デビュー。温かいメロディと真摯な歌詞で多くの人を感動させる。代表作『栄光の架橋』『虹』『夏色』など。スポーツや応援の場面で広く使われる。",
@@ -2106,5 +2139,705 @@ export const bands: Band[] = [
       { id: "yzb-3", platform: "tiktok", hashtag: "#栄光の架橋_カバー", content: { zh: "栄光の架橋翻唱挑战！体育大会前必听的应援歌曲🎵", ja: "栄光の架橋カバーチャレンジ！体育大会前に聴きたい応援歌🎵", en: "Eiko no Kakehashi cover challenge! The ultimate support song before sports day 🎵" }, author: "@yuzu_covers", engagement: "95万 播放", link: "https://www.tiktok.com/tag/ゆず", hot: 78 },
     ],
     billboardRank: 32,
+  },
+
+  // ==================== 🆕 v3.0 新增 22 组音乐人 ====================
+
+  // ==================== SixTONES ====================
+  {
+    id: "sixtones",
+    name: { zh: "SixTONES", ja: "SixTONES", en: "SixTONES" },
+    slug: "sixtones",
+    genre: "J-Pop / Idol",
+    tags: ['idol-group', 'j-pop'],
+    description: {
+      zh: "杰尼斯事务所旗下六人男子偶像团体，2020年正式CD出道。以「Hip Hop × Rock × Idol」为理念，兼具偶像的闪耀和硬朗的舞台风格。",
+      ja: "STARTO ENTERTAINMENT所属の6人組男性アイドルグループ。2020年CDデビュー。「Hip Hop × Rock × Idol」をコンセプトに、キレのあるパフォーマンスが特徴。",
+      en: "A six-member male idol group under STARTO ENTERTAINMENT. Debuted in 2020. Known for their sharp performances blending Hip Hop, Rock, and Idol elements.",
+    },
+    members: [],
+    twitterHandle: "SixTONES_SME",
+    instagramHandle: "sixtones_sme",
+    tiktokHandle: "sixtones_official",
+    officialSite: "https://www.sixtones.jp",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [],
+    socialPosts: [
+      { id: "st-1", platform: "x", author: "SixTONES", date: "2026-07-05", content: { zh: "SixTONES 新专辑「THE VIBES」7月30日发行决定！新曲「YOUTH」先行配信中！🎵", ja: "SixTONES ニューアルバム「THE VIBES」7月30日発売決定！新曲「YOUTH」先行配信中！🎵", en: "SixTONES new album 'THE VIBES' out July 30! New song 'YOUTH' streaming now! 🎵" }, link: "https://www.sixtones.jp" },
+      { id: "st-2", platform: "instagram", author: "SixTONES", date: "2026-06-28", content: { zh: "「YOUTH」MV幕后花絮！这次拍摄太有趣了 📸", ja: "「YOUTH」MVメイキング公開！今回の撮影は最高に楽しかった 📸", en: "'YOUTH' MV behind-the-scenes! This shoot was so fun 📸" }, link: "https://instagram.com/sixtones_sme" },
+      { id: "st-3", platform: "tiktok", author: "SixTONES", date: "2026-07-01", content: { zh: "YOUTH 舞蹈挑战开始！一起来跳吧！💃", ja: "YOUTH ダンスチャレンジスタート！一緒に踊ろう！💃", en: "YOUTH dance challenge starts! Let's dance together! 💃" }, link: "https://tiktok.com/@sixtones_official" },
+    ],
+    fanBuzzes: [],
+    billboardRank: 5,
+  },
+
+  // ==================== なにわ男子 ====================
+  {
+    id: "naniwa-danshi",
+    name: { zh: "なにわ男子", ja: "なにわ男子", en: "Naniwa Danshi" },
+    slug: "naniwa-danshi",
+    genre: "J-Pop / Idol",
+    tags: ['idol-group', 'j-pop'],
+    description: {
+      zh: "STARTO ENTERTAINMENT旗下七人关西出身偶像团体，2021年CD出道。以关西特有的明快性格和清爽的王子风格形象获得超高人气。",
+      ja: "STARTO ENTERTAINMENT所属の7人組関西ジャニーズグループ。2021年CDデビュー。関西らしい明るいキャラクターと爽やかな王道アイドル路線で大人気。",
+      en: "A seven-member Kansai-based idol group under STARTO ENTERTAINMENT. Debuted in 2021. Known for their bright Osaka charm and refreshing prince-like style.",
+    },
+    members: [],
+    twitterHandle: "naniwadanshi728",
+    instagramHandle: "naniwadanshi_official",
+    officialSite: "https://www.naniwadanshi.jp",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [],
+    socialPosts: [
+      { id: "nd-1", platform: "x", author: "なにわ男子", date: "2026-07-06", content: { zh: "なにわ男子 Arena Tour 2026 决定！全国10都市巡演！详细日程将于近日公布 🎉", ja: "なにわ男子 アリーナツアー2026 決定！全国10都市公演！詳細は近日発表 🎉", en: "Naniwa Danshi Arena Tour 2026 confirmed! 10 cities nationwide! Details coming soon 🎉" }, link: "https://www.naniwadanshi.jp" },
+      { id: "nd-2", platform: "instagram", author: "なにわ男子", date: "2026-07-01", content: { zh: "夏日单曲「Summer Dream」先行配信开始！🌻", ja: "夏の新曲「Summer Dream」先行配信スタート！🌻", en: "Summer single 'Summer Dream' now streaming! 🌻" }, link: "https://instagram.com/naniwadanshi_official" },
+      { id: "nd-3", platform: "tiktok", author: "なにわ男子", date: "2026-06-25", content: { zh: "「Summer Dream」舞蹈版！一起来学振付吧 🌞", ja: "「Summer Dream」ダンスver！振り付けを覚えよう 🌞", en: "'Summer Dream' dance ver! Learn the choreography 🌞" }, link: "https://tiktok.com/@naniwadanshi_official" },
+    ],
+    fanBuzzes: [],
+    billboardRank: 10,
+  },
+
+  // ==================== BE:FIRST ====================
+  {
+    id: "be-first",
+    name: { zh: "BE:FIRST", ja: "BE:FIRST", en: "BE:FIRST" },
+    slug: "be-first",
+    genre: "J-Pop / Hip-Hop",
+    tags: ['j-pop', 'hip-hop'],
+    description: {
+      zh: "2021年通过SKY-HI主办的选拔赛「THE FIRST」诞生的七人男子组合。以世界标准的高水准唱跳实力迅速崛起。2026年7月新曲「Missing」获Billboard Hot 100首位。",
+      ja: "2021年SKY-HI主宰のオーディション「THE FIRST」から誕生した7人組グループ。世界基準のハイレベルな歌とダンスで急成長。2026年7月「Missing」がBillboard Hot 100首位。",
+      en: "A seven-member group formed in 2021 through SKY-HI's audition 'THE FIRST.' Known for world-class vocals and dance. 'Missing' (Jul 2026) hit #1 on Billboard Hot 100.",
+    },
+    members: [],
+    twitterHandle: "BEFIRSTofficial",
+    instagramHandle: "befirst__official",
+    tiktokHandle: "befirst_official",
+    officialSite: "https://befirst.tokyo",
+    imageUrl: IMAGES.placeholder,
+    tours: [
+      { date: "2026-08-15", venue: { zh: "埼玉Super Arena", ja: "さいたまスーパーアリーナ", en: "Saitama Super Arena" }, location: { zh: "埼玉", ja: "埼玉", en: "Saitama" }, status: "upcoming", tourName: "BE:FIRST LIVE 2026", ticketUrl: "https://befirst.tokyo/live/" },
+    ],
+    albums: [
+      { title: "Missing", type: "single", releaseDate: "2026-07-01", previewUrl: "https://www.youtube.com/embed/missing_be1", description: { zh: "2026年7月新单曲，Billboard Hot 100 首位获得。", ja: "2026年7月の新曲、Billboard Hot 100首位獲得。", en: "July 2026 single, hit #1 on Billboard Hot 100." } },
+    ],
+    representativeWorks: [
+      { title: "Gifted.", description: { zh: "出道单曲，展现BE:FIRST世界标准实力的代表作。", ja: "デビューシングル。BE:FIRSTの世界基準の実力を示す代表作。", en: "Debut single showcasing BE:FIRST's world-class talent." }, youtubeUrl: "https://www.youtube.com/embed/gifted_be1" },
+    ],
+    socialPosts: [
+      { id: "be1-1", platform: "x", author: "BE:FIRST", date: "2026-07-02", content: { zh: "「Missing」Billboard Hot 100 首位！感谢BESTY！🔥", ja: "「Missing」Billboard Hot 100首位！BESTYに感謝！🔥", en: "'Missing' #1 on Billboard Hot 100! Thank you BESTY! 🔥" }, link: "https://x.com/BEFIRSTofficial" },
+      { id: "be1-2", platform: "instagram", author: "BE:FIRST", date: "2026-07-01", content: { zh: "新曲「Missing」MV公开！世界标准的新篇章", ja: "新曲「Missing」MV公開！世界基準の新章", en: "New single 'Missing' MV out now! A new chapter" }, link: "https://instagram.com/befirst__official" },
+    ],
+    fanBuzzes: [
+      { id: "be1b-1", platform: "x", hashtag: "#BE_FIRST_Missing", content: { zh: "BE:FIRST「Missing」Billboard首位！新生代实力派终于登顶！🎉", ja: "BE:FIRST「Missing」Billboard首位！新世代実力派がついに頂点に！🎉", en: "BE:FIRST 'Missing' #1! The new-gen power group reaches the top! 🎉" }, author: "@jpop_buzz", engagement: "8.5万 讨论", link: "https://x.com/search?q=%23BE_FIRST", hot: 95 },
+      { id: "be1b-2", platform: "tiktok", hashtag: "#BEFIRST_Challenge", content: { zh: "BE:FIRST新歌「Missing」舞蹈挑战！一起跳起来！💃", ja: "BE:FIRST新曲「Missing」ダンスチャレンジ！一緒に踊ろう！💃", en: "BE:FIRST 'Missing' dance challenge! Let's dance! 💃" }, author: "@befirst_dance", engagement: "250万 播放", link: "https://www.tiktok.com/tag/BEFIRST", hot: 92 },
+    ],
+    billboardRank: 33,
+  },
+
+  // ==================== Number_i ====================
+  {
+    id: "number-i",
+    name: { zh: "Number_i", ja: "Number_i", en: "Number_i" },
+    slug: "number-i",
+    genre: "J-Pop / Hip-Hop",
+    tags: ['j-pop', 'hip-hop'],
+    description: {
+      zh: "2024年由平野紫耀、神宫寺勇太、岸优太三人组成的话题组合。独立后以自由奔放的音乐风格和压倒性的人气席卷日本音乐界。",
+      ja: "2024年に平野紫耀、神宮寺勇太、岸優太の3人で結成された話題のグループ。独立後、自由奔放な音楽性と圧倒的な人気で日本音楽界を席巻。",
+      en: "A high-profile trio formed in 2024 by Sho Hirano, Yuta Jinguji, and Yuta Kishi. Known for their free-spirited music and overwhelming popularity after going independent.",
+    },
+    members: [],
+    twitterHandle: "number_i_0325",
+    instagramHandle: "number_i_official",
+    tiktokHandle: "number_i_official",
+    officialSite: "https://number-i.jp",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "GOAT", description: { zh: "Number_i 出道曲，展现三人压倒性魅力的代表作。", ja: "Number_i デビュー曲。3人の圧倒的カリスマを示す代表作。", en: "Number_i debut track showcasing the trio's overwhelming charisma." }, youtubeUrl: "https://www.youtube.com/embed/goat_numberi" },
+    ],
+    socialPosts: [
+      { id: "numi-1", platform: "x", author: "Number_i", date: "2026-06-25", content: { zh: "Number_i 新项目即将启动！敬请期待 🎯", ja: "Number_i 新プロジェクト始動！お楽しみに 🎯", en: "Number_i new project launching soon! Stay tuned 🎯" }, link: "https://x.com/number_i_0325" },
+    ],
+    fanBuzzes: [
+      { id: "numib-1", platform: "x", hashtag: "#Number_i", content: { zh: "Number_i 人气持续爆表！任何动态都引发热议！🔥", ja: "Number_i 人気爆発中！どんな動きも話題に！🔥", en: "Number_i's popularity is explosive! Every move makes headlines! 🔥" }, author: "@jpop_news", engagement: "12万 讨论", link: "https://x.com/search?q=%23Number_i", hot: 90 },
+    ],
+    billboardRank: 34,
+  },
+
+  // ==================== Perfume ====================
+  {
+    id: "perfume",
+    name: { zh: "Perfume", ja: "Perfume", en: "Perfume" },
+    slug: "perfume",
+    genre: "Electronic / J-Pop",
+    tags: ['electronic', 'j-pop'],
+    description: {
+      zh: "由中田康孝制作的三女组合，以近未来科技感的电子音乐和精准同步的舞蹈闻名世界。代表日本电子流行乐的最高水准。",
+      ja: "中田ヤスタカプロデュースの3人組。近未来的なテクノポップと精密に同期したダンスで世界に知られる。日本のエレクトロポップの最高峰。",
+      en: "A trio produced by Yasutaka Nakata, known worldwide for futuristic techno-pop and precisely synchronized dance performances. Japan's premier electropop act.",
+    },
+    members: [],
+    twitterHandle: "Perfume_Staff",
+    instagramHandle: "prfm_official",
+    tiktokHandle: "perfume_official",
+    officialSite: "https://www.perfume-web.jp",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "ポリリズム", description: { zh: "Perfume 的代表曲，NHK环保活动主题曲，精准同步的舞蹈成为社会现象。", ja: "Perfumeの代表曲。NHK環境キャンペーン主題歌。シンクロダンスが社会現象に。", en: "Perfume's signature song, NHK environmental campaign theme. The synced dance became a phenomenon." }, youtubeUrl: "https://www.youtube.com/embed/polylism_perfume" },
+    ],
+    socialPosts: [
+      { id: "pfm-1", platform: "x", author: "Perfume", date: "2026-07-03", content: { zh: "Perfume 新巡演准备中！科技与音乐的融合 ✨", ja: "Perfume 新ツアー準備中！テクノロジーと音楽の融合 ✨", en: "Perfume preparing for new tour! Fusion of tech and music ✨" }, link: "https://x.com/Perfume_Staff" },
+    ],
+    fanBuzzes: [
+      { id: "pfmb-1", platform: "x", hashtag: "#Perfume_2026", content: { zh: "Perfume 技术流演出！每次巡演都是视听盛宴！🎵", ja: "Perfume テクノロジーライブ！毎回のツアーが視聴覚の饗宴！🎵", en: "Perfume's tech-driven shows! Every tour is an audiovisual feast! 🎵" }, author: "@perfume_fans", engagement: "3.2万 讨论", link: "https://x.com/search?q=%23Perfume", hot: 82 },
+    ],
+    billboardRank: 35,
+  },
+
+  // ==================== 乃木坂46 ====================
+  {
+    id: "nogizaka46",
+    name: { zh: "乃木坂46", ja: "乃木坂46", en: "Nogizaka46" },
+    slug: "nogizaka46",
+    genre: "J-Pop / Idol",
+    tags: ['idol-group', 'j-pop'],
+    description: {
+      zh: "2011年成立的日本国民级女子偶像团体，以「AKB48的官方对手」身份出道。以优雅高贵的形象和高质量的乐曲在日本偶像界独树一帜。",
+      ja: "2011年結成の国民的女性アイドルグループ。「AKB48の公式ライバル」としてデビュー。気品あふれるイメージと高品質な楽曲で独自の地位を確立。",
+      en: "Japan's national female idol group formed in 2011 as AKB48's official rival. Known for their elegant image and high-quality music.",
+    },
+    members: [],
+    twitterHandle: "nogizaka46",
+    instagramHandle: "nogizaka46_official",
+    tiktokHandle: "nogizaka46_official",
+    officialSite: "https://www.nogizaka46.com",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "インフルエンサー", description: { zh: "乃木坂46的代表曲，获日本唱片大赏。优雅的编舞和洗脑的旋律。", ja: "乃木坂46の代表曲。日本レコード大賞受賞。優雅な振付と中毒性のあるメロディ。", en: "Nogizaka46's signature song, won Japan Record Award. Elegant choreography and catchy melody." }, youtubeUrl: "https://www.youtube.com/embed/influencer_nogi" },
+    ],
+    socialPosts: [
+      { id: "nogi-1", platform: "x", author: "乃木坂46", date: "2026-07-04", content: { zh: "乃木坂46 夏季巡演决定！今年也是最好的夏天 🌻", ja: "乃木坂46 夏ツアー決定！今年も最高の夏に 🌻", en: "Nogizaka46 summer tour confirmed! The best summer again 🌻" }, link: "https://x.com/nogizaka46" },
+    ],
+    fanBuzzes: [
+      { id: "nogib-1", platform: "x", hashtag: "#乃木坂46_夏ツアー", content: { zh: "乃木坂夏季巡演！今年的选拔阵容太强了！🌸", ja: "乃木坂夏ツアー！今年の選抜メンバーが強すぎる！🌸", en: "Nogizaka summer tour! This year's senbatsu lineup is incredible! 🌸" }, author: "@nogizaka_fan", engagement: "6.8万 讨论", link: "https://x.com/search?q=%23乃木坂46", hot: 85 },
+    ],
+    billboardRank: 36,
+  },
+
+  // ==================== 櫻坂46 ====================
+  {
+    id: "sakurazaka46",
+    name: { zh: "櫻坂46", ja: "櫻坂46", en: "Sakurazaka46" },
+    slug: "sakurazaka46",
+    genre: "J-Pop / Idol",
+    tags: ['idol-group', 'j-pop'],
+    description: {
+      zh: "2020年从欅坂46改名而来的女子偶像团体。继承了前身的酷炫风格，同时开拓了新的音乐方向。以强有力的舞蹈和深刻歌词著称。",
+      ja: "2020年に欅坂46から改名した女性アイドルグループ。前身のクールなスタイルを継承しつつ、新たな音楽性を開拓。力強いダンスと深い歌詞が特徴。",
+      en: "A female idol group renamed from Keyakizaka46 in 2020. Known for powerful dance performances and deep lyrics, carrying forward a cool, edgy style.",
+    },
+    members: [],
+    twitterHandle: "sakurazaka46",
+    instagramHandle: "sakurazaka46_official",
+    tiktokHandle: "sakurazaka46_official",
+    officialSite: "https://sakurazaka46.com",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "Nobody's fault", description: { zh: "櫻坂46的出道单曲，展现全新起点的决心。", ja: "櫻坂46のデビューシングル。新たな出発の決意を示す。", en: "Sakurazaka46's debut single, showing determination for a fresh start." }, youtubeUrl: "https://www.youtube.com/embed/nobody_sakura" },
+    ],
+    socialPosts: [
+      { id: "skz-1", platform: "x", author: "櫻坂46", date: "2026-06-28", content: { zh: "櫻坂46 新单曲制作中！敬请期待！🌸", ja: "櫻坂46 新シングル制作中！お楽しみに！🌸", en: "Sakurazaka46 new single in production! Stay tuned! 🌸" }, link: "https://x.com/sakurazaka46" },
+    ],
+    fanBuzzes: [
+      { id: "skzb-1", platform: "x", hashtag: "#櫻坂46_新曲", content: { zh: "櫻坂46新曲预告！每次回归都让人惊艳的编舞！🖤", ja: "櫻坂46新曲予告！毎回驚かされる振付！🖤", en: "Sakurazaka46 new song preview! Choreography always amazes! 🖤" }, author: "@sakurazaka_news", engagement: "4.1万 讨论", link: "https://x.com/search?q=%23櫻坂46", hot: 80 },
+    ],
+    billboardRank: 37,
+  },
+
+  // ==================== &TEAM ====================
+  {
+    id: "andteam",
+    name: { zh: "&TEAM", ja: "&TEAM", en: "&TEAM" },
+    slug: "andteam",
+    genre: "J-Pop / Idol",
+    tags: ['idol-group', 'j-pop'],
+    description: {
+      zh: "HYBE JAPAN旗下的九人男子全球团体。通过选秀节目《&AUDITION》诞生。以狼为主题概念，融合K-Pop制作体系与J-Pop元素。",
+      ja: "HYBE JAPAN所属の9人組グローバルグループ。オーディション番組「&AUDITION」から誕生。狼をコンセプトに、K-Pop制作システムとJ-Popを融合。",
+      en: "A nine-member global boy group under HYBE JAPAN, formed through '&AUDITION.' Wolf concept, blending K-Pop production with J-Pop elements.",
+    },
+    members: [],
+    twitterHandle: "andTEAMofficial",
+    instagramHandle: "andteam_official",
+    tiktokHandle: "andteam_official",
+    officialSite: "https://www.andteam-official.jp",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "Under the skin", description: { zh: "&TEAM 出道曲，展现狼群概念的视觉冲击力。", ja: "&TEAM デビュー曲。狼群コンセプトの視覚的インパクト。", en: "&TEAM debut track with striking wolf-pack visual concept." }, youtubeUrl: "https://www.youtube.com/embed/underskin_andteam" },
+    ],
+    socialPosts: [
+      { id: "andt-1", platform: "x", author: "&TEAM", date: "2026-07-01", content: { zh: "&TEAM 新专辑「雪明かり」7月发行决定！🐺", ja: "&TEAM 新アルバム「雪明かり」7月発売決定！🐺", en: "&TEAM new album 'Yukiakari' coming in July! 🐺" }, link: "https://x.com/andTEAMofficial" },
+    ],
+    fanBuzzes: [
+      { id: "andtb-1", platform: "x", hashtag: "#andTEAM_雪明かり", content: { zh: "&TEAM 新专辑！HYBE日本团体的成长速度太惊人了！🐺🔥", ja: "&TEAM 新アルバム！HYBE日本グループの成長速度がすごい！🐺🔥", en: "&TEAM new album! HYBE's Japanese group growth is incredible! 🐺🔥" }, author: "@andteam_fans", engagement: "5.5万 讨论", link: "https://x.com/search?q=%23andTEAM", hot: 78 },
+    ],
+    billboardRank: 38,
+  },
+
+  // ==================== NAPORI ====================
+  {
+    id: "nabori",
+    name: { zh: "NAPORI", ja: "NAPORI", en: "NAPORI" },
+    slug: "nabori",
+    genre: "J-Pop / Hip-Hop",
+    tags: ['j-pop', 'hip-hop'],
+    description: {
+      zh: "新锐男女混合组合，以独特的世界观和洗脑的旋律快速积累人气。",
+      ja: "新鋭の男女混合グループ。独特の世界観と中毒性のあるメロディで急速に人気を集める。",
+      en: "An up-and-coming mixed-gender group rapidly gaining popularity with their unique worldview and addictive melodies.",
+    },
+    members: [],
+    twitterHandle: "NAPORI_OFFICIAL",
+    instagramHandle: "nabori_official",
+    officialSite: "https://nabori.jp",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [],
+    socialPosts: [
+      { id: "nbr-1", platform: "x", author: "NAPORI", date: "2026-07-05", content: { zh: "NAPORI 首次全国巡演决定！从东京出发，和大家一起创造属于我们的夏天！🔥", ja: "NAPORI 初の全国ツアー決定！東京からスタート、みんなと一緒に最高の夏を作ろう！🔥", en: "NAPORI first nationwide tour confirmed! Starting from Tokyo, let's create the best summer together! 🔥" }, link: "https://nabori.jp" },
+      { id: "nbr-2", platform: "instagram", author: "NAPORI", date: "2026-06-20", content: { zh: "新曲MV拍摄中！这次的视觉概念非常特别 🎬", ja: "新曲MV撮影中！今回のビジュアルコンセプトはとても特別 🎬", en: "New song MV in production! The visual concept is very special 🎬" }, link: "https://instagram.com/nabori_official" },
+    ],
+    fanBuzzes: [],
+    billboardRank: 39,
+  },
+
+  // ==================== 優里 ====================
+  {
+    id: "yuri",
+    name: { zh: "優里", ja: "優里", en: "Yuuri" },
+    slug: "yuri",
+    genre: "J-Pop / Singer-Songwriter",
+    tags: ['j-pop', 'singer-songwriter'],
+    description: {
+      zh: "日本新生代男性唱作人，以街头Live为起点。代表曲「ドライフラワー」流媒播放量突破10亿次，成为日本史上最快达成的男性solo艺人。",
+      ja: "日本の新世代男性シンガーソングライター。ストリートライブからスタート。代表曲「ドライフラワー」がストリーミング10億回再生突破。男性ソロ最速記録。",
+      en: "A new-generation male singer-songwriter who started with street lives. 'Dry Flower' surpassed 1 billion streams, the fastest for a Japanese male solo artist.",
+    },
+    members: [],
+    twitterHandle: "yuuri_official",
+    instagramHandle: "yuuri__music__official",
+    tiktokHandle: "yuuri_official",
+    officialSite: "https://yuuriweb.com",
+    imageUrl: IMAGES.placeholder,
+    tours: [
+      { date: "2026-08-20", venue: { zh: "日本武道馆", ja: "日本武道館", en: "Nippon Budokan" }, location: { zh: "东京", ja: "東京", en: "Tokyo" }, status: "upcoming", tourName: "YUURI LIVE 2026", ticketUrl: "https://yuuriweb.com/live/" },
+    ],
+    albums: [
+      { title: "ドライフラワー", type: "single", releaseDate: "2020-10-25", previewUrl: "https://www.youtube.com/embed/dryflower_yuuri", description: { zh: "流媒10亿播放的超级热曲。失恋主题引发广泛共鸣。", ja: "ストリーミング10億回再生の超大ヒット曲。失恋テーマが広く共感を呼ぶ。", en: "Super hit with 1B streams. Breakup theme resonated widely." } },
+    ],
+    representativeWorks: [
+      { title: "ドライフラワー", description: { zh: "日本流媒史上最快10亿播放的男性solo歌曲，国民级失恋歌曲。", ja: "日本ストリーミング史上最速10億回再生の男性ソロ曲。国民的失恋ソング。", en: "Japan's fastest 1B-stream male solo song. National breakup anthem." }, youtubeUrl: "https://www.youtube.com/embed/dryflower_yuuri" },
+    ],
+    socialPosts: [
+      { id: "yuri-1", platform: "x", author: "優里", date: "2026-07-05", content: { zh: "武道馆公演决定！从街头到武道馆的梦想实现！🎤", ja: "武道館公演決定！ストリートから武道館への夢が叶う！🎤", en: "Budokan show confirmed! Dream from street to Budokan coming true! 🎤" }, link: "https://x.com/yuuri_official" },
+      { id: "yuri-2", platform: "instagram", author: "優里", date: "2026-06-30", content: { zh: "ドライフラワー 10亿播放感谢！继续用音乐连接心灵 🌸", ja: "ドライフラワー 10億回再生感謝！これからも音楽で心をつなぐ 🌸", en: "Dry Flower 1B streams! Thank you! Music connects hearts 🌸" }, link: "https://instagram.com/yuuri__music__official" },
+    ],
+    fanBuzzes: [
+      { id: "yurib-1", platform: "x", hashtag: "#優里_武道館", content: { zh: "優里武道馆！从街头Live一步步走到这里，太励志了！🎸", ja: "優里武道館！ストリートライブからここまで来た、感動！🎸", en: "Yuuri Budokan! From street lives to here, so inspiring! 🎸" }, author: "@yuuri_fans", engagement: "5.2万 讨论", link: "https://x.com/search?q=%23優里", hot: 88 },
+    ],
+    billboardRank: 40,
+  },
+
+  // ==================== Tani Yuuki ====================
+  {
+    id: "tani-yuuki",
+    name: { zh: "Tani Yuuki", ja: "Tani Yuuki", en: "Tani Yuuki" },
+    slug: "tani-yuuki",
+    genre: "J-Pop / Singer-Songwriter",
+    tags: ['j-pop', 'singer-songwriter'],
+    description: {
+      zh: "新生代男性唱作人，以温柔的歌声和贴近生活的歌词获得广泛支持。代表曲「W/X/Y」在TikTok爆红后成为国民级热曲。",
+      ja: "新世代男性シンガーソングライター。優しい歌声と日常に寄り添う歌詞で広く支持される。代表曲「W/X/Y」がTikTokで大バズりし国民的ヒットに。",
+      en: "A new-gen male singer-songwriter loved for his gentle voice and relatable lyrics. 'W/X/Y' became a national hit after going viral on TikTok.",
+    },
+    members: [],
+    twitterHandle: "taniyuuki_",
+    instagramHandle: "taniyuuki_",
+    tiktokHandle: "taniyuuki_",
+    officialSite: "https://taniyuuki.com",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "W/X/Y", description: { zh: "TikTok爆红曲，流媒累计超5亿播放。真实细腻的恋爱歌词引发共鸣。", ja: "TikTok大バズり曲。ストリーミング累計5億回超え。リアルで繊細な恋愛歌詞が共感を呼ぶ。", en: "TikTok viral hit with 500M+ streams. Real, delicate love lyrics resonate deeply." }, youtubeUrl: "https://www.youtube.com/embed/wxy_tani" },
+    ],
+    socialPosts: [
+      { id: "tny-1", platform: "x", author: "Tani Yuuki", date: "2026-07-01", content: { zh: "新曲制作中！今年也会有更多好音乐 🎵", ja: "新曲制作中！今年もたくさんの音楽を届けます 🎵", en: "New song in production! More great music coming this year 🎵" }, link: "https://x.com/taniyuuki_" },
+    ],
+    fanBuzzes: [
+      { id: "tnyb-1", platform: "tiktok", hashtag: "#TaniYuuki_WXY", content: { zh: "Tani Yuuki「W/X/Y」翻唱热潮持续中！你的版本是什么？🎤", ja: "Tani Yuuki「W/X/Y」カバー続出中！あなたのバージョンは？🎤", en: "Tani Yuuki 'W/X/Y' cover trend continues! What's your version? 🎤" }, author: "@taniyuuki_covers", engagement: "180万 播放", link: "https://www.tiktok.com/tag/TaniYuuki", hot: 82 },
+    ],
+    billboardRank: 41,
+  },
+
+  // ==================== milet ====================
+  {
+    id: "milet",
+    name: { zh: "milet", ja: "milet", en: "milet" },
+    slug: "milet",
+    genre: "J-Pop / Singer-Songwriter",
+    tags: ['j-pop', 'singer-songwriter'],
+    description: {
+      zh: "拥有独特沙哑声线的女性唱作人。以日英双语创作，曾为东京奥运会闭幕式献唱。以深情的歌声和世界级的音乐品味获得广泛好评。",
+      ja: "独特のハスキーボイスを持つ女性シンガーソングライター。日英バイリンガルで創作。東京五輪閉会式で歌唱。深みのある歌声と世界的な音楽センスで高評価。",
+      en: "A female singer-songwriter with a distinctive husky voice. Bilingual in Japanese and English. Performed at the Tokyo Olympics closing ceremony.",
+    },
+    members: [],
+    twitterHandle: "milet_music",
+    instagramHandle: "milet_music",
+    tiktokHandle: "milet_official",
+    officialSite: "https://www.milet.jp",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "inside you", description: { zh: "milet出道EP主打曲，展现独特声线魅力的代表作。", ja: "miletデビューEPのリード曲。独特の声質の魅力を存分に示す代表作。", en: "milet's debut EP lead track, showcasing her unique vocal charm." }, youtubeUrl: "https://www.youtube.com/embed/insideyou_milet" },
+    ],
+    socialPosts: [
+      { id: "mlt-1", platform: "x", author: "milet", date: "2026-07-02", content: { zh: "milet 新专辑准备中！今年夏天有惊喜 ✨", ja: "milet 新アルバム準備中！今年の夏はサプライズが ✨", en: "milet new album in the works! Surprises this summer ✨" }, link: "https://x.com/milet_music" },
+    ],
+    fanBuzzes: [
+      { id: "mltb-1", platform: "x", hashtag: "#milet_新曲", content: { zh: "milet 的歌声太有辨识度了！期待新专辑！🎶", ja: "milet の歌声は唯一無二！新アルバムが楽しみ！🎶", en: "milet's voice is so distinctive! Can't wait for the new album! 🎶" }, author: "@milet_fans", engagement: "3.5万 讨论", link: "https://x.com/search?q=%23milet", hot: 75 },
+    ],
+    billboardRank: 42,
+  },
+
+  // ==================== 幾田りら ====================
+  {
+    id: "ikuta-lilas",
+    name: { zh: "幾田りら", ja: "幾田りら", en: "Lilas Ikuta" },
+    slug: "ikuta-lilas",
+    genre: "J-Pop / Singer-Songwriter",
+    tags: ['j-pop', 'singer-songwriter'],
+    description: {
+      zh: "YOASOBI的主唱ikura以本名「幾田りら」进行的solo活动。以通透清澈的歌声和深情的歌词创作展现不同于YOASOBI的个人魅力。",
+      ja: "YOASOBIのボーカルikuraが本名「幾田りら」として行うソロ活動。透き通る歌声と情感豊かな歌詞で、YOASOBIとは異なる魅力を見せる。",
+      en: "YOASOBI vocalist ikura's solo project under her real name Lilas Ikuta. Her crystal-clear voice and emotional songwriting show a different charm from YOASOBI.",
+    },
+    members: [],
+    twitterHandle: "ikutalilas",
+    instagramHandle: "lilasikuta",
+    tiktokHandle: "ikutalilas",
+    officialSite: "https://www.lilasikuta.com",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "Answer", description: { zh: "幾田りらsolo代表曲，展现与YOASOBI不同面貌的个人魅力。", ja: "幾田りらソロ代表曲。YOASOBIとは違う顔を見せる。", en: "Lilas Ikuta's solo representative work, showing a different side from YOASOBI." }, youtubeUrl: "https://www.youtube.com/embed/answer_lilas" },
+    ],
+    socialPosts: [
+      { id: "lil-1", platform: "x", author: "幾田りら", date: "2026-06-25", content: { zh: "Solo新曲制作中！作为幾田りら的音乐也在进化 🌿", ja: "ソロ新曲制作中！幾田りらとしての音楽も進化中 🌿", en: "New solo song in production! Evolving as Lilas Ikuta 🌿" }, link: "https://x.com/ikutalilas" },
+    ],
+    fanBuzzes: [
+      { id: "lilb-1", platform: "x", hashtag: "#幾田りら_solo", content: { zh: "幾田りらsolo和YOASOBI完全不同的魅力！两个都要！🌟", ja: "幾田りらソロとYOASOBIは全然違う魅力！両方欲しい！🌟", en: "Lilas Ikuta solo is so different from YOASOBI! Love both! 🌟" }, author: "@ikura_fans", engagement: "4.8万 讨论", link: "https://x.com/search?q=%23幾田りら", hot: 78 },
+    ],
+    billboardRank: 43,
+  },
+
+  // ==================== MAN WITH A MISSION ====================
+  {
+    id: "man-with-a-mission",
+    name: { zh: "MAN WITH A MISSION", ja: "MAN WITH A MISSION", en: "MAN WITH A MISSION" },
+    slug: "man-with-a-mission",
+    genre: "J-Rock / Band",
+    tags: ['j-rock', 'band'],
+    description: {
+      zh: "以「狼头」造型为标志的五人摇滚乐队。融合摇滚、电子、说唱等元素，创造出独一无二的「MWAM Sound」。为多部动画和电影创作主题曲。",
+      ja: "「オオカミ頭」のビジュアルがトレードマークの5人組ロックバンド。ロック、エレクトロ、ラップを融合した独自の「MWAMサウンド」。多数のアニメ・映画主題歌を担当。",
+      en: "A five-member rock band known for their wolf-head visuals. Blends rock, electronic, and rap into their unique 'MWAM Sound.' Created theme songs for many anime and films.",
+    },
+    members: [],
+    twitterHandle: "mwamjapan",
+    instagramHandle: "manwithamission_official",
+    tiktokHandle: "manwithamission_official",
+    officialSite: "https://www.mwamjapan.info",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "database", description: { zh: "动画《记录的地平线》OP，MWAM的代表曲之一。", ja: "アニメ『ログ・ホライズン』OP。MWAMの代表曲の一つ。", en: "Log Horizon OP, one of MWAM's signature songs." }, youtubeUrl: "https://www.youtube.com/embed/database_mwam" },
+    ],
+    socialPosts: [
+      { id: "mwam-1", platform: "x", author: "MAN WITH A MISSION", date: "2026-07-01", content: { zh: "新巡演「WOLVES ON PARADE 2026」即将开始！🐺🎸", ja: "新ツアー「WOLVES ON PARADE 2026」まもなく開幕！🐺🎸", en: "New tour 'WOLVES ON PARADE 2026' starting soon! 🐺🎸" }, link: "https://x.com/mwamjapan" },
+    ],
+    fanBuzzes: [
+      { id: "mwamb-1", platform: "x", hashtag: "#MWAM_Wolves2026", content: { zh: "MWAM 巡演！狼团的现场永远是最燃的！🐺🔥", ja: "MWAM ツアー！狼団のライブはいつも最高にアツい！🐺🔥", en: "MWAM tour! The wolf pack's live shows are always the most hype! 🐺🔥" }, author: "@mwam_fans", engagement: "4.2万 讨论", link: "https://x.com/search?q=%23MWAM", hot: 82 },
+    ],
+    billboardRank: 44,
+  },
+
+  // ==================== 緑黄色社会 ====================
+  {
+    id: "ryokuoushoku-shakai",
+    name: { zh: "緑黄色社会", ja: "緑黄色社会", en: "Ryokuoushoku Shakai" },
+    slug: "ryokuoushoku-shakai",
+    genre: "J-Pop / Band",
+    tags: ['j-pop', 'band'],
+    description: {
+      zh: "男女混合四人流行乐队。以主唱长屋晴子的清澈歌声和多彩的音乐风格为特色。代表曲「Mela!」和「花になって」广受喜爱。",
+      ja: "男女混合4人組ポップバンド。ボーカル長屋晴子の透き通る歌声と多彩な音楽性が特徴。代表曲「Mela!」「花になって」が広く愛される。",
+      en: "A mixed-gender four-member pop band. Known for vocalist Haruko Nagaya's crystal-clear voice and versatile musical style. 'Mela!' and 'Hana ni Natte' are fan favorites.",
+    },
+    members: [],
+    twitterHandle: "ryokushaka",
+    instagramHandle: "ryokushaka_official",
+    tiktokHandle: "ryokushaka_official",
+    officialSite: "https://www.ryokuoushokushakai.com",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "Mela!", description: { zh: "緑黄色社会的代表曲。TikTok舞蹈挑战爆红，充满活力的夏季歌曲。", ja: "緑黄色社会の代表曲。TikTokダンスチャレンジで大バズり。元気あふれる夏ソング。", en: "Ryokuoushoku Shakai's signature song. TikTok dance challenge went viral. Energetic summer anthem." }, youtubeUrl: "https://www.youtube.com/embed/mela_ryokushaka" },
+    ],
+    socialPosts: [
+      { id: "ryk-1", platform: "x", author: "緑黄色社会", date: "2026-07-03", content: { zh: "新专辑「花になって」巡演中！每场都是最棒的体验 🌸", ja: "新アルバム「花になって」ツアー中！毎公演が最高の体験 🌸", en: "New album 'Hana ni Natte' tour in progress! Every show is the best 🌸" }, link: "https://x.com/ryokushaka" },
+    ],
+    fanBuzzes: [
+      { id: "rykb-1", platform: "tiktok", hashtag: "#Mela_Challenge", content: { zh: "Mela! 舞蹈挑战又回来了！2026版本也超可爱！💃", ja: "Mela! ダンスチャレンジ再燃！2026バージョンもかわいい！💃", en: "Mela! dance challenge is back! 2026 version is so cute! 💃" }, author: "@ryokushaka_fans", engagement: "150万 播放", link: "https://www.tiktok.com/tag/緑黄色社会", hot: 85 },
+    ],
+    billboardRank: 45,
+  },
+
+  // ==================== THE ALFEE ====================
+  {
+    id: "the-alfee",
+    name: { zh: "THE ALFEE", ja: "THE ALFEE", en: "THE ALFEE" },
+    slug: "the-alfee",
+    genre: "J-Rock / Band",
+    tags: ['j-rock', 'band'],
+    description: {
+      zh: "1974年结成、仍在活跃的日本传奇摇滚乐队。三人组合以精湛的演奏技术和高品质的硬摇滚/流行摇滚著称。保持着日本乐队最长的连续巡演记录。",
+      ja: "1974年結成、現在も活躍する日本のレジェンドロックバンド。3人組で卓越した演奏技術と高品質なハードロック/ポップロックが特徴。日本最長連続ツアー記録保持。",
+      en: "A legendary Japanese rock band formed in 1974 and still active. Known for superb musicianship and high-quality hard rock/pop rock. Holds Japan's longest consecutive tour record.",
+    },
+    members: [],
+    twitterHandle: "thealfee",
+    instagramHandle: "thealfee_official",
+    officialSite: "https://www.alfee.com",
+    imageUrl: IMAGES.placeholder,
+    tours: [
+      { date: "2026-08-01", venue: { zh: "日本武道馆", ja: "日本武道館", en: "Nippon Budokan" }, location: { zh: "东京", ja: "東京", en: "Tokyo" }, status: "upcoming", tourName: "THE ALFEE 2026 Summer Live", ticketUrl: "https://www.alfee.com/live/" },
+    ],
+    albums: [],
+    representativeWorks: [
+      { title: "星空のディスタンス", description: { zh: "THE ALFEE 的代表曲，日本摇滚史上的经典名曲。", ja: "THE ALFEE の代表曲。日本ロック史に残る名曲。", en: "THE ALFEE's signature song, a classic in Japanese rock history." }, youtubeUrl: "https://www.youtube.com/embed/hoshizora_alfee" },
+    ],
+    socialPosts: [
+      { id: "alf-1", platform: "x", author: "THE ALFEE", date: "2026-07-05", content: { zh: "THE ALFEE 2026 夏季巡演！传奇还在继续！🎸", ja: "THE ALFEE 2026 夏ツアー！伝説はまだ続く！🎸", en: "THE ALFEE 2026 Summer Tour! The legend continues! 🎸" }, link: "https://x.com/thealfee" },
+    ],
+    fanBuzzes: [
+      { id: "alfb-1", platform: "x", hashtag: "#THEALFEE_2026", content: { zh: "THE ALFEE 还在巡演！50年以上的传奇！令人尊敬！🎸", ja: "THE ALFEE まだツアーしてる！50年以上の伝説！リスペクト！🎸", en: "THE ALFEE still touring! 50+ years of legend! Respect! 🎸" }, author: "@rock_history_jp", engagement: "2.8万 讨论", link: "https://x.com/search?q=%23THEALFEE", hot: 72 },
+    ],
+    billboardRank: 46,
+  },
+
+  // ==================== サザンオールスターズ ====================
+  {
+    id: "southern-all-stars",
+    name: { zh: "サザンオールスターズ", ja: "サザンオールスターズ", en: "Southern All Stars" },
+    slug: "southern-all-stars",
+    genre: "J-Rock / J-Pop / Band",
+    tags: ['j-rock', 'j-pop', 'band'],
+    description: {
+      zh: "1978年出道的日本国民级乐队。由桑田佳祐领衔，融合摇滚、流行、民谣等多种风格，创造出独特的「SAS Sound」。日本音乐史上最成功的乐队之一。",
+      ja: "1978年デビューの国民的バンド。桑田佳祐率いる。ロック、ポップ、フォークなど多彩なジャンルを融合した独自の「SASサウンド」。日本音楽史上最も成功したバンドの一つ。",
+      en: "Japan's national band formed in 1978. Led by Keisuke Kuwata. Blends rock, pop, and folk into their unique 'SAS Sound.' One of the most successful bands in Japanese music history.",
+    },
+    members: [],
+    twitterHandle: "sasfannet",
+    instagramHandle: "southernallstars_official",
+    officialSite: "https://southernallstars.jp",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "TSUNAMI", description: { zh: "サザン的国民级名曲，日本单曲销量历史最高之一。", ja: "サザンの国民的名曲。日本のシングル売上歴代最高の一つ。", en: "Southern's national classic, one of Japan's best-selling singles." }, youtubeUrl: "https://www.youtube.com/embed/tsunami_sas" },
+    ],
+    socialPosts: [
+      { id: "sas-1", platform: "x", author: "サザンオールスターズ", date: "2026-06-25", content: { zh: "サザン 2026 新曲制作中！等待值得的 🎶", ja: "サザン 2026 新曲制作中！待つ価値あり 🎶", en: "Southern 2026 new song in production! Worth the wait 🎶" }, link: "https://x.com/sasfannet" },
+    ],
+    fanBuzzes: [
+      { id: "sasb-1", platform: "x", hashtag: "#サザン_2026", content: { zh: "サザン的新曲！每次发布都是日本音乐界的大事件！🇯🇵", ja: "サザンの新曲！毎回が日本音楽界のビッグニュース！🇯🇵", en: "New Southern song! Every release is big news in Japanese music! 🇯🇵" }, author: "@sas_fans", engagement: "7.5万 讨论", link: "https://x.com/search?q=%23サザン", hot: 90 },
+    ],
+    billboardRank: 47,
+  },
+
+  // ==================== 桑田佳祐 ====================
+  {
+    id: "keisuke-kuwata",
+    name: { zh: "桑田佳祐", ja: "桑田佳祐", en: "Keisuke Kuwata" },
+    slug: "keisuke-kuwata",
+    genre: "J-Rock / Singer-Songwriter",
+    tags: ['j-rock', 'singer-songwriter'],
+    description: {
+      zh: "サザンオールスターズ的主唱兼创作核心。作为solo艺人同样成就斐然，以独特的嗓音和深刻的歌词影响了几代日本音乐人。",
+      ja: "サザンオールスターズのボーカル兼ソングライター。ソロアーティストとしても大きな成功を収め、独特の歌声と深い歌詞で日本の音楽界に多大な影響を与える。",
+      en: "Southern All Stars' vocalist and creative core. Equally successful as a solo artist, his distinctive voice and profound lyrics have influenced generations of Japanese musicians.",
+    },
+    members: [],
+    twitterHandle: "Kuwata_Keisuke",
+    officialSite: "https://www.kuwatakeisuke.jp",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "白い恋人達", description: { zh: "桑田佳祐solo代表作，冬季经典情歌。", ja: "桑田佳祐ソロの代表作。冬の定番ラブソング。", en: "Keisuke Kuwata's solo masterpiece, a winter classic love song." }, youtubeUrl: "https://www.youtube.com/embed/shiroi_kuwata" },
+    ],
+    socialPosts: [
+      { id: "kkw-1", platform: "x", author: "桑田佳祐", date: "2026-07-01", content: { zh: "桑田佳祐 2026 Solo Live 筹备中。期待与大家在音乐中相遇 🎤", ja: "桑田佳祐 2026 ソロライブ準備中。音楽でみなさんとお会いできるのを楽しみにしています 🎤", en: "Keisuke Kuwata 2026 Solo Live in preparation. Looking forward to meeting everyone through music 🎤" }, link: "https://www.kuwatakeisuke.jp" },
+      { id: "kkw-2", platform: "instagram", author: "桑田佳祐", date: "2026-06-15", content: { zh: "新曲制作中。这次也是一首能触动心灵的歌 🎶", ja: "新曲制作中。今回も心に響く一曲になりそうです 🎶", en: "New song in production. Another one that touches the heart 🎶" }, link: "https://instagram.com/keisuke_kuwata_official" },
+    ],
+    fanBuzzes: [],
+    billboardRank: 48,
+  },
+
+  // ==================== ヨルシカ ====================
+  {
+    id: "yorushika",
+    name: { zh: "ヨルシカ", ja: "ヨルシカ", en: "Yorushika" },
+    slug: "yorushika",
+    genre: "J-Rock / Band",
+    tags: ['j-rock', 'band'],
+    description: {
+      zh: "由作曲家n-buna和主唱suis组成的创作型组合。以文学性的歌词和精致的摇滚音色著称。「ただ君に晴れ」「夜に駆ける」等作品深受年轻人喜爱。",
+      ja: "コンポーザーn-bunaとボーカルsuisによる創作ユニット。文学的な歌詞と洗練されたロックサウンドが特徴。「ただ君に晴れ」「夜に駆ける」など若者に人気。",
+      en: "A creative unit of composer n-buna and vocalist suis. Known for literary lyrics and refined rock sound. 'Just a Sunny Day for You' is beloved by young listeners.",
+    },
+    members: [],
+    twitterHandle: "nbuna_staff",
+    instagramHandle: "yorushika_official_",
+    officialSite: "https://yorushika.com",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "ただ君に晴れ", description: { zh: "ヨルシカ的代表曲。夏日的感伤与美丽的旋律完美融合。", ja: "ヨルシカの代表曲。夏の切なさと美しいメロディが融合。", en: "Yorushika's signature song. Summer nostalgia fused with beautiful melody." }, youtubeUrl: "https://www.youtube.com/embed/tadakimi_yorushika" },
+    ],
+    socialPosts: [
+      { id: "yrs-1", platform: "x", author: "ヨルシカ", date: "2026-07-01", content: { zh: "ヨルシカ 新专辑制作中。夏天的故事还在继续。📖", ja: "ヨルシカ 新アルバム制作中。夏の物語はまだ続く。📖", en: "Yorushika new album in production. The summer story continues. 📖" }, link: "https://x.com/nbuna_staff" },
+    ],
+    fanBuzzes: [
+      { id: "yrsb-1", platform: "x", hashtag: "#ヨルシカ_新曲", content: { zh: "ヨルシカ的新曲！n-buna的歌词永远让人心动！💙", ja: "ヨルシカの新曲！n-bunaの歌詞はいつも心に刺さる！💙", en: "Yorushika's new song! n-buna's lyrics always pierce the heart! 💙" }, author: "@yorushika_fans", engagement: "5.8万 讨论", link: "https://x.com/search?q=%23ヨルシカ", hot: 85 },
+    ],
+    billboardRank: 49,
+  },
+
+  // ==================== imase ====================
+  {
+    id: "imase",
+    name: { zh: "imase", ja: "imase", en: "imase" },
+    slug: "imase",
+    genre: "J-Pop / Singer-Songwriter",
+    tags: ['j-pop', 'singer-songwriter'],
+    description: {
+      zh: "2021年开始音乐活动的新生代男性唱作人。以「NIGHT DANCER」在TikTok爆红，独特的都会流行风格和轻松摇摆的节奏感使其迅速成为日本最受瞩目的新星之一。",
+      ja: "2021年から音楽活動を開始した新世代男性シンガーソングライター。「NIGHT DANCER」がTikTokで大バズり。都会的でスタイリッシュなポップセンスで注目の新星に。",
+      en: "A new-gen male singer-songwriter active since 2021. 'NIGHT DANCER' went viral on TikTok. His urban, stylish pop sense made him one of Japan's most-watched new stars.",
+    },
+    members: [],
+    twitterHandle: "imase_1109",
+    instagramHandle: "imase_1109",
+    tiktokHandle: "imase_1109",
+    officialSite: "https://imase-official.com",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [
+      { title: "NIGHT DANCER", description: { zh: "imase的代表曲。TikTok全球爆红，韩国音源榜单也获得好成绩。", ja: "imaseの代表曲。TikTokで世界的にバズり、韓国チャートでも好成績。", en: "imase's signature song. Global TikTok hit, charted well in Korea too." }, youtubeUrl: "https://www.youtube.com/embed/nightdancer_imase" },
+    ],
+    socialPosts: [
+      { id: "ims-1", platform: "x", author: "imase", date: "2026-07-04", content: { zh: "imase 新曲即将发布！这次也会是让人想跳舞的曲子 💃", ja: "imase 新曲まもなく配信！今回も踊りたくなる曲に 💃", en: "imase new song dropping soon! Another track that makes you want to dance 💃" }, link: "https://x.com/imase_1109" },
+    ],
+    fanBuzzes: [
+      { id: "imsb-1", platform: "tiktok", hashtag: "#imase_新曲", content: { zh: "imase的新曲舞蹈挑战！NIGHT DANCER之后又有新神曲！🕺", ja: "imaseの新曲ダンスチャレンジ！NIGHT DANCERに続く新たな神曲！🕺", en: "imase new song dance challenge! Another banger after NIGHT DANCER! 🕺" }, author: "@imase_dance", engagement: "220万 播放", link: "https://www.tiktok.com/tag/imase", hot: 88 },
+    ],
+    billboardRank: 50,
+  },
+
+  // ==================== INI ====================
+  {
+    id: "ini",
+    name: { zh: "INI", ja: "INI", en: "INI" },
+    slug: "ini",
+    genre: "J-Pop",
+    tags: ['j-pop'],
+    description: {
+      zh: "2021年通过选秀节目「PRODUCE 101 JAPAN SEASON2」诞生的11人男子组合。以高水准的唱跳实力和多样的音乐风格快速积累人气。",
+      ja: "2021年オーディション番組「PRODUCE 101 JAPAN SEASON2」から誕生した11人組グループ。ハイレベルな歌とダンス、多彩な音楽性で急成長。",
+      en: "An 11-member boy group formed in 2021 through 'PRODUCE 101 JAPAN SEASON2.' Known for high-level vocals, dance, and diverse musical styles.",
+    },
+    members: [],
+    twitterHandle: "official__INI",
+    instagramHandle: "official__ini",
+    tiktokHandle: "official__ini",
+    officialSite: "https://ini-official.com",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [],
+    socialPosts: [
+      { id: "ini-1", platform: "x", author: "INI", date: "2026-07-03", content: { zh: "INI 新单曲「THE FRAME」7月发行！全新概念展现成熟魅力 🔥", ja: "INI 新シングル「THE FRAME」7月発売！新たなコンセプトで大人の魅力を 🔥", en: "INI new single 'THE FRAME' out in July! New concept showing mature charm 🔥" }, link: "https://ini-official.com" },
+      { id: "ini-2", platform: "instagram", author: "INI", date: "2026-06-28", content: { zh: "「THE FRAME」概念照公开！这次走暗黑成熟风 🖤", ja: "「THE FRAME」コンセプトフォト公開！今回はダークで大人な雰囲気 🖤", en: "'THE FRAME' concept photos revealed! Going for a dark, mature vibe 🖤" }, link: "https://instagram.com/official__ini" },
+      { id: "ini-3", platform: "tiktok", author: "INI", date: "2026-07-01", content: { zh: "THE FRAME 预告！先来感受一下新曲的节奏 🎵", ja: "THE FRAME 予告！新曲のリズムを一足先に 🎵", en: "THE FRAME teaser! Get a taste of the new rhythm 🎵" }, link: "https://tiktok.com/@official__ini" },
+    ],
+    fanBuzzes: [],
+    billboardRank: 51,
+  },
+
+  // ==================== JO1 ====================
+  {
+    id: "jo1",
+    name: { zh: "JO1", ja: "JO1", en: "JO1" },
+    slug: "jo1",
+    genre: "J-Pop",
+    tags: ['j-pop'],
+    description: {
+      zh: "2019年通过「PRODUCE 101 JAPAN」诞生的11人男子组合。作为日本选秀系团体的先驱，以高完成度的音乐和舞台表演引领了日本男子团体的新潮流。",
+      ja: "2019年「PRODUCE 101 JAPAN」から誕生した11人組グループ。日本オーディション発グループの先駆けとして、完成度の高い音楽とパフォーマンスで新潮流を生み出す。",
+      en: "An 11-member boy group formed in 2019 through 'PRODUCE 101 JAPAN.' As pioneers of Japanese audition-based groups, they lead a new wave with polished music and performances.",
+    },
+    members: [],
+    twitterHandle: "official_jo1",
+    instagramHandle: "official_jo1",
+    tiktokHandle: "official_jo1",
+    officialSite: "https://jo1.jp",
+    imageUrl: IMAGES.placeholder,
+    tours: [],
+    albums: [],
+    representativeWorks: [],
+    socialPosts: [
+      { id: "jo1-1", platform: "x", author: "JO1", date: "2026-07-05", content: { zh: "JO1 2026 全国巡演「BE CLASSIC」7月开启！全国7都市14公演 🚀", ja: "JO1 2026 全国ツアー「BE CLASSIC」7月開幕！全国7都市14公演 🚀", en: "JO1 2026 Nationwide Tour 'BE CLASSIC' starts in July! 7 cities, 14 shows 🚀" }, link: "https://jo1.jp" },
+      { id: "jo1-2", platform: "instagram", author: "JO1", date: "2026-07-01", content: { zh: "巡演排练中！今年的舞台会比以往更震撼 💪", ja: "ツアーリハーサル中！今年のステージはこれまで以上に圧巻 💪", en: "Tour rehearsals in progress! This year's stage will be more spectacular than ever 💪" }, link: "https://instagram.com/official_jo1" },
+      { id: "jo1-3", platform: "tiktok", author: "JO1", date: "2026-06-25", content: { zh: "「BE CLASSIC」舞蹈预览！准备好一起喊了吗 🔥", ja: "「BE CLASSIC」ダンスプレビュー！一緒に叫ぶ準備はいい？🔥", en: "'BE CLASSIC' dance preview! Ready to shout together? 🔥" }, link: "https://tiktok.com/@official_jo1" },
+    ],
+    fanBuzzes: [],
+    billboardRank: 52,
   },
 ];

@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { SessionProvider } from "@/components/layout/SessionProviderWrap";
 import { locales, getMessages, type Locale } from "@/lib/i18n";
 import { I18nProvider } from "@/components/layout/I18nProvider";
 import AppShell from "@/components/layout/AppShell";
@@ -25,9 +24,7 @@ export default async function LocaleLayout({
 
   return (
     <I18nProvider locale={locale} messages={msgs}>
-      <SessionProvider>
-        <AppShell>{children}</AppShell>
-      </SessionProvider>
+      <AppShell>{children}</AppShell>
     </I18nProvider>
   );
 }

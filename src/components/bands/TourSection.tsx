@@ -1,74 +1,20 @@
 "use client";
 
 import { useI18n } from "@/components/layout/I18nProvider";
-import { useSession } from "next-auth/react";
 import { cn } from "@/lib/utils";
 import type { TourDate } from "@/data/bands";
-import { useState, useEffect, useCallback } from "react";
+import { useWantToGoTours } from "@/hooks/useLocalStorage";
 import { Bookmark, BookmarkCheck, Ticket, ExternalLink, Clock, CheckCircle, AlertCircle, Users } from "lucide-react";
 
 interface TourSectionProps {
   tours: TourDate[];
   artistName: string;
+  artistSlug: string;
 }
 
-export default function TourSection({ tours, artistName }: TourSectionProps) {
+export default function TourSection({ tours, artistName, artistSlug }: TourSectionProps) {
   const { t, locale } = useI18n();
-  const { data: session } = useSession();
-  const [savedIds, setSavedIds] = useState<Set<string>>(new Set());
-  const [loading, setLoading] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!session) return;
-    fetch("/api/saved-events")
-      .then((r) => r.json())
-      .then((data) => {
-        if (Array.isArray(data)) {
-          setSavedIds(new Set(data.map((e: { eventId: string }) => e.eventId)));
-        }
-      })
-      .catch(() => {});
-  }, [session]);
-
-  const toggleSave = useCallback(
-    async (tour: TourDate) => {
-      if (!session) return;
-      const eventId = `tour-${tour.date}-${tour.venue.ja}`;
-      setLoading(eventId);
-
-      try {
-        if (savedIds.has(eventId)) {
-          await fetch("/api/saved-events", {
-            method: "DELETE",
-            body: JSON.stringify({ eventId }),
-          });
-          setSavedIds((prev) => {
-            const next = new Set(prev);
-            next.delete(eventId);
-            return next;
-          });
-        } else {
-          await fetch("/api/saved-events", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              eventId,
-              eventType: "tour",
-              title: `${artistName} - ${tour.venue[locale as "zh" | "ja" | "en"]} - ${tour.date}`,
-              artist: artistName,
-              date: tour.date,
-            }),
-          });
-          setSavedIds((prev) => new Set(prev).add(eventId));
-        }
-      } catch {
-        // ignore
-      } finally {
-        setLoading(null);
-      }
-    },
-    [savedIds, session, artistName, locale]
-  );
+  const { isSaved, toggleTour } = useWantToGoTours();
 
   if (tours.length === 0) {
     return (
@@ -138,7 +84,7 @@ export default function TourSection({ tours, artistName }: TourSectionProps) {
     <div className="space-y-3">
       {tours.map((tour, i) => {
         const eventId = `tour-${tour.date}-${tour.venue.ja}`;
-        const isSaved = savedIds.has(eventId);
+        const saved = isSaved(eventId);
 
         return (
           <div
@@ -202,25 +148,35 @@ export default function TourSection({ tours, artistName }: TourSectionProps) {
                   </a>
                 )}
 
-                {/* Save Button */}
-                {session && (
-                  <button
-                    onClick={() => toggleSave(tour)}
-                    disabled={loading === eventId}
-                    className={cn(
-                      "ml-1 p-2 rounded-full transition-colors flex-shrink-0",
-                      isSaved
-                        ? "text-[#EDBC13] hover:bg-[#EDBC13]/10"
-                        : "text-neutral-300 hover:text-[#EDBC13] hover:bg-neutral-100"
-                    )}
-                  >
-                    {isSaved ? (
-                      <BookmarkCheck className="w-5 h-5" />
-                    ) : (
-                      <Bookmark className="w-5 h-5" />
-                    )}
-                  </button>
-                )}
+                {/* Want-to-Go Button (no login required) */}
+                <button
+                  onClick={() =>
+                    toggleTour({
+                      id: eventId,
+                      artistName,
+                      artistSlug,
+                      tourName: tour.tourName,
+                      date: tour.date,
+                      venue: tour.venue[loc],
+                      location: tour.location[loc],
+                      ticketUrl: tour.ticketUrl,
+                      addedAt: "",
+                    })
+                  }
+                  className={cn(
+                    "ml-1 p-2 rounded-full transition-colors flex-shrink-0",
+                    saved
+                      ? "text-[#EDBC13] hover:bg-[#EDBC13]/10"
+                      : "text-neutral-300 hover:text-[#EDBC13] hover:bg-neutral-100"
+                  )}
+                  title={saved ? t("bands.saved") : t("bands.wantToGo")}
+                >
+                  {saved ? (
+                    <BookmarkCheck className="w-5 h-5" />
+                  ) : (
+                    <Bookmark className="w-5 h-5" />
+                  )}
+                </button>
               </div>
             </div>
           </div>
