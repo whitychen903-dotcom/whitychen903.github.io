@@ -21,7 +21,7 @@ const keepDirs = new Set([
 const keepFiles = new Set([
   "package.json", "package-lock.json", "tsconfig.json",
   "next.config.ts", "tailwind.config.ts", "postcss.config.mjs",
-  "components.json", "eslint.config.mjs", ".gitignore",
+  "components.json", "eslint.config.mjs", ".gitignore", ".nojekyll",
   "README.md", ".env.local", "PLAN.md", "PRD-v2.0.md", "PRD-v3.0.md"
 ]);
 
