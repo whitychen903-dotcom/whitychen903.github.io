@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002F[locale]","\u002F[locale]\u002Fauth\u002Fsignin","\u002F[locale]\u002Fauth\u002Fverify-request","\u002F[locale]\u002Fbands","\u002F[locale]\u002Fbands\u002F[slug]","\u002F[locale]\u002Fbands\u002F[slug]\u002F[memberId]","\u002F[locale]\u002Fmy-events"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
