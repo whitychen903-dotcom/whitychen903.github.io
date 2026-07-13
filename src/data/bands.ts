@@ -223,6 +223,29 @@ const IMAGES = {
   // サカナクション 成员
   sakanactionIchiro: withBasePath("/images/sakanaction-ichiro.png"),
 
+  // === v3.0 新增音乐人主图（来自 Wikimedia Commons / 官方公开图片） ===
+  sixtones: withBasePath("/images/sixtones.jpg"),
+  naniwaDanshi: withBasePath("/images/naniwa-danshi.jpg"),
+  beFirst: withBasePath("/images/be-first.jpg"),
+  numberI: withBasePath("/images/number-i.jpg"),
+  ini: withBasePath("/images/ini.jpg"),
+  jo1: withBasePath("/images/jo1.jpg"),
+  perfume: withBasePath("/images/perfume.jpg"),
+  nogizaka46: withBasePath("/images/nogizaka46.jpg"),
+  sakurazaka46: withBasePath("/images/sakurazaka46.jpg"),
+  andteam: withBasePath("/images/andteam.jpg"),
+  yuri: withBasePath("/images/yuri.jpg"),
+  taniYuuki: withBasePath("/images/tani-yuuki.jpg"),
+  milet: withBasePath("/images/milet.jpg"),
+  ikutaLilas: withBasePath("/images/ikuta-lilas.jpg"),
+  manWithAMission: withBasePath("/images/man-with-a-mission.jpg"),
+  ryokuoushokuShakai: withBasePath("/images/ryokuoushoku-shakai.jpg"),
+  theAlfee: withBasePath("/images/the-alfee.jpg"),
+  southernAllStars: withBasePath("/images/southern-all-stars.jpg"),
+  keisukeKuwata: withBasePath("/images/keisuke-kuwata.jpg"),
+  yorushika: withBasePath("/images/yorushika.jpg"),
+  imase: withBasePath("/images/imase.jpg"),
+
   // 🆕 v3.0 占位图（新音乐人后续补充真实图片）
   placeholder: withBasePath("/images/artist-placeholder.svg"),
 };
@@ -2160,7 +2183,7 @@ export const bands: Band[] = [
     instagramHandle: "sixtones_sme",
     tiktokHandle: "sixtones_official",
     officialSite: "https://www.sixtones.jp",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.sixtones,
     tours: [],
     albums: [],
     representativeWorks: [],
@@ -2189,7 +2212,7 @@ export const bands: Band[] = [
     twitterHandle: "naniwadanshi728",
     instagramHandle: "naniwadanshi_official",
     officialSite: "https://www.naniwadanshi.jp",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.naniwaDanshi,
     tours: [],
     albums: [],
     representativeWorks: [],
@@ -2219,7 +2242,7 @@ export const bands: Band[] = [
     instagramHandle: "befirst__official",
     tiktokHandle: "befirst_official",
     officialSite: "https://befirst.tokyo",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.beFirst,
     tours: [
       { date: "2026-08-15", venue: { zh: "埼玉Super Arena", ja: "さいたまスーパーアリーナ", en: "Saitama Super Arena" }, location: { zh: "埼玉", ja: "埼玉", en: "Saitama" }, status: "upcoming", tourName: "BE:FIRST LIVE 2026", ticketUrl: "https://befirst.tokyo/live/" },
     ],
@@ -2257,7 +2280,7 @@ export const bands: Band[] = [
     instagramHandle: "number_i_official",
     tiktokHandle: "number_i_official",
     officialSite: "https://number-i.jp",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.numberI,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2289,7 +2312,7 @@ export const bands: Band[] = [
     instagramHandle: "prfm_official",
     tiktokHandle: "perfume_official",
     officialSite: "https://www.perfume-web.jp",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.perfume,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2321,7 +2344,7 @@ export const bands: Band[] = [
     instagramHandle: "nogizaka46_official",
     tiktokHandle: "nogizaka46_official",
     officialSite: "https://www.nogizaka46.com",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.nogizaka46,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2353,7 +2376,7 @@ export const bands: Band[] = [
     instagramHandle: "sakurazaka46_official",
     tiktokHandle: "sakurazaka46_official",
     officialSite: "https://sakurazaka46.com",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.sakurazaka46,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2385,7 +2408,7 @@ export const bands: Band[] = [
     instagramHandle: "andteam_official",
     tiktokHandle: "andteam_official",
     officialSite: "https://www.andteam-official.jp",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.andteam,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2445,7 +2468,7 @@ export const bands: Band[] = [
     instagramHandle: "yuuri__music__official",
     tiktokHandle: "yuuri_official",
     officialSite: "https://yuuriweb.com",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.yuri,
     tours: [
       { date: "2026-08-20", venue: { zh: "日本武道馆", ja: "日本武道館", en: "Nippon Budokan" }, location: { zh: "东京", ja: "東京", en: "Tokyo" }, status: "upcoming", tourName: "YUURI LIVE 2026", ticketUrl: "https://yuuriweb.com/live/" },
     ],
@@ -2482,7 +2505,7 @@ export const bands: Band[] = [
     instagramHandle: "taniyuuki_",
     tiktokHandle: "taniyuuki_",
     officialSite: "https://taniyuuki.com",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.taniYuuki,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2514,7 +2537,7 @@ export const bands: Band[] = [
     instagramHandle: "milet_music",
     tiktokHandle: "milet_official",
     officialSite: "https://www.milet.jp",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.milet,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2546,7 +2569,7 @@ export const bands: Band[] = [
     instagramHandle: "lilasikuta",
     tiktokHandle: "ikutalilas",
     officialSite: "https://www.lilasikuta.com",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.ikutaLilas,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2578,7 +2601,7 @@ export const bands: Band[] = [
     instagramHandle: "manwithamission_official",
     tiktokHandle: "manwithamission_official",
     officialSite: "https://www.mwamjapan.info",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.manWithAMission,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2610,7 +2633,7 @@ export const bands: Band[] = [
     instagramHandle: "ryokushaka_official",
     tiktokHandle: "ryokushaka_official",
     officialSite: "https://www.ryokuoushokushakai.com",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.ryokuoushokuShakai,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2641,7 +2664,7 @@ export const bands: Band[] = [
     twitterHandle: "thealfee",
     instagramHandle: "thealfee_official",
     officialSite: "https://www.alfee.com",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.theAlfee,
     tours: [
       { date: "2026-08-01", venue: { zh: "日本武道馆", ja: "日本武道館", en: "Nippon Budokan" }, location: { zh: "东京", ja: "東京", en: "Tokyo" }, status: "upcoming", tourName: "THE ALFEE 2026 Summer Live", ticketUrl: "https://www.alfee.com/live/" },
     ],
@@ -2674,7 +2697,7 @@ export const bands: Band[] = [
     twitterHandle: "sasfannet",
     instagramHandle: "southernallstars_official",
     officialSite: "https://southernallstars.jp",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.southernAllStars,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2704,7 +2727,7 @@ export const bands: Band[] = [
     members: [],
     twitterHandle: "Kuwata_Keisuke",
     officialSite: "https://www.kuwatakeisuke.jp",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.keisukeKuwata,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2734,7 +2757,7 @@ export const bands: Band[] = [
     twitterHandle: "nbuna_staff",
     instagramHandle: "yorushika_official_",
     officialSite: "https://yorushika.com",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.yorushika,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2766,7 +2789,7 @@ export const bands: Band[] = [
     instagramHandle: "imase_1109",
     tiktokHandle: "imase_1109",
     officialSite: "https://imase-official.com",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.imase,
     tours: [],
     albums: [],
     representativeWorks: [
@@ -2798,7 +2821,7 @@ export const bands: Band[] = [
     instagramHandle: "official__ini",
     tiktokHandle: "official__ini",
     officialSite: "https://ini-official.com",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.ini,
     tours: [],
     albums: [],
     representativeWorks: [],
@@ -2828,7 +2851,7 @@ export const bands: Band[] = [
     instagramHandle: "official_jo1",
     tiktokHandle: "official_jo1",
     officialSite: "https://jo1.jp",
-    imageUrl: IMAGES.placeholder,
+    imageUrl: IMAGES.jo1,
     tours: [],
     albums: [],
     representativeWorks: [],
