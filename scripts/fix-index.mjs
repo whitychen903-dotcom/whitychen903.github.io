@@ -16,7 +16,7 @@ console.log("✅ Fixed out/index.html with meta refresh");
 // Source code directories to NOT delete from root
 const keepDirs = new Set([
   "src", "public", "scripts", "node_modules", "out",
-  ".git", ".codebuddy", ".next"
+  ".git", ".github", ".codebuddy", ".next"
 ]);
 const keepFiles = new Set([
   "package.json", "package-lock.json", "tsconfig.json",
