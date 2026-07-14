@@ -7,7 +7,7 @@ const outDir = join(cwd, "out");
 // 1. Fix out/index.html with meta refresh
 const indexPath = join(outDir, "index.html");
 let html = readFileSync(indexPath, "utf-8");
-const metaRefresh = '<meta http-equiv="refresh" content="0;url=/zh/">\n';
+const metaRefresh = '<meta http-equiv="refresh" content="0;url=/whitychen903.github.io/zh/">\n';
 html = html.replace("</head>", metaRefresh + "</head>");
 writeFileSync(indexPath, html);
 console.log("✅ Fixed out/index.html with meta refresh");
