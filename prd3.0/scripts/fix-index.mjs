@@ -15,14 +15,11 @@ console.log("✅ Fixed out/index.html with meta refresh");
 // 2. Sync out/ contents to repo root for GitHub Pages (deploys from / root)
 // Source code directories to NOT delete from root
 const keepDirs = new Set([
-  "src", "public", "scripts", "node_modules", "out",
+  "prd2.0", "prd3.0", "node_modules", "out",
   ".git", ".github", ".codebuddy", ".next"
 ]);
 const keepFiles = new Set([
-  "package.json", "package-lock.json", "tsconfig.json",
-  "next.config.ts", "tailwind.config.ts", "postcss.config.mjs",
-  "components.json", "eslint.config.mjs", ".gitignore", ".nojekyll",
-  "README.md", ".env.local", "PLAN.md", "PRD-v2.0.md", "PRD-v3.0.md"
+  ".nojekyll", "CNAME", ".env.local"
 ]);
 
 // Remove old deployed files from root (but keep source files)
