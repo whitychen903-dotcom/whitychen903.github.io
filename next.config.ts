@@ -4,7 +4,7 @@ const isGitHubPages = process.env.GITHUB_PAGES === "true";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: isGitHubPages ? "/whitychen903.github.io" : "",
+  basePath: "", // username.github.io 仓库在根路径服务，不需要 basePath
   trailingSlash: true,
   images: {
     unoptimized: true,
